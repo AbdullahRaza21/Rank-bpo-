@@ -10,19 +10,19 @@ body {
   color: #000;
   padding: 6rem 2rem 2rem 2rem; 
 }
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4rem;
-  position: fixed;        
-  top: 0;                  
+  position: fixed;
+  top: 0; 
   left: 0;
-  width: 100%;             
-  background: #fff;        
-  z-index: 1000;           
+  width: 100%;
+  background: #fff;
+  z-index: 1000;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  padding: 1.5rem 2rem;  
+  padding: 1.5rem 2rem;
 }
 
 .logo {
@@ -33,7 +33,6 @@ nav {
   display: flex;
   gap: 2rem;
   align-items: center;
-
 }
 
 nav a {
@@ -48,6 +47,44 @@ nav a {
   padding: 0.5rem 1rem;
   border-radius: 20px;
   cursor: pointer;
+}
+
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+#menu-toggle {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+
+  nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  }
+
+ 
+  #menu-toggle:checked + .menu-icon + nav {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
 }
 
 main {
@@ -70,7 +107,7 @@ h1 {
 }
 
 .scalable {
-  background-color: rgba(255, 0, 0, 0.3); /* light red */
+  background-color: rgba(255, 0, 0, 0.3); 
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -283,7 +320,6 @@ h1 {
   background-color: #000;
   color: #fff;
 }
-
 .cards {
   font-family: Arial, sans-serif;
   padding: 40px;
@@ -294,13 +330,13 @@ h1 {
   gap: 40px;
   max-width: 1200px;
   margin: auto;
+  flex-wrap: wrap;
 }
 
 .testimonial-card {
   flex: 2;
   position: relative;
-  background: url('back\ pic.jpg') center center / contain no-repeat;
-  background-size: cover;
+  background: url('back pic.jpg') center center / cover no-repeat;
   border-radius: 60px 20px 20px 20px;
   min-height: 350px;
   color: white;
@@ -309,12 +345,11 @@ h1 {
   justify-content: center;
   padding: 30px;
   min-width: 300px;
-  background-color: #000; 
 }
 
 .overlay {
   background-color: rgba(0, 35, 122, 0.7);
-  width: inherit;
+  width: 100%;
   height: 100%;
   padding: 30px;
   border-radius: inherit;
@@ -325,14 +360,14 @@ h1 {
 }
 
 .quote {
-  font-size: 50px;
+  font-size: 2.5rem;
   line-height: 1.4;
   margin-bottom: 30px;
 }
 
 .author {
   font-weight: bold;
-  font-size: 13px;
+  font-size: 0.8rem;
   text-transform: uppercase;
 }
 
@@ -340,7 +375,7 @@ h1 {
   position: absolute;
   bottom: 20px;
   right: 30px;
-  font-size: 24px;
+  font-size: 1.5rem;
   background: rgba(255, 255, 255, 0.2);
   width: 40px;
   height: 40px;
@@ -351,7 +386,6 @@ h1 {
 
 .stat-card {
   flex: 1;
-  
   background: linear-gradient(160deg, #db2e2e, #c47df4);
   border-radius: 20px;
   padding: 30px;
@@ -359,25 +393,73 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  min-width: 250px;
 }
 
 .stat-number {
-  font-size: 80px;
+  font-size: 4rem;
   font-weight: bold;
   line-height: 1;
 }
 
 .percent {
-  font-size: 40px;
+  font-size: 2rem;
   vertical-align: top;
 }
 
 .stat-description {
   margin-top: 20px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
 }
+
+@media (max-width: 992px) {
+  .quote {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contain {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .testimonial-card, .stat-card {
+    min-width: 100%;
+  }
+
+  .quote {
+    font-size: 1.6rem;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+  }
+
+  .percent {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+    padding: 20px;
+  }
+
+  .quote {
+    font-size: 1.4rem;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .percent {
+    font-size: 1.2rem;
+  }
+}
+
 
 .stats {
   font-family: Arial, sans-serif;
@@ -760,7 +842,7 @@ hr {
   margin-bottom: 40px;
 }
 
-/* Scroll wrapper */
+
 .video-scroll-wrapper {
   overflow-x: auto;
   overflow-y: hidden;
@@ -855,9 +937,9 @@ hr {
 .contact-right {
   flex: 1;
   min-width: 300px;
-  max-width: 50%;
+  max-width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .form-box {
@@ -874,10 +956,18 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .form-header h3 {
   margin: 0;
+  font-size: 1.5rem;
+}
+
+.form-avatars {
+  display: flex;
+  align-items: center;
 }
 
 .form-avatars img {
@@ -938,6 +1028,25 @@ form small {
   color: #222;
 }
 
+
+@media (max-width: 600px) {
+  .input-row {
+    flex-direction: column;
+  }
+
+  .form-box {
+    padding: 20px;
+  }
+
+  .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-header h3 {
+    font-size: 1.3rem;
+  }
+}
 
 .custom-footer {
   background-color: #000;
